@@ -4,7 +4,7 @@ import {player} from "../helper/const";
 describe('userReducer', () => {
   it('should return the initial state', () => {
     expect(gameReducers(undefined, {})).toEqual({
-      board: Array(9).fill(null),
+      cells: Array(9).fill(null),
       curPlayer: player.x,
       winner: null,
       gameId: null,
@@ -18,7 +18,7 @@ describe('userReducer', () => {
       payload: '123',
     };
     expect(gameReducers(undefined, newGameAction)).toEqual({
-      board: Array(9).fill(null),
+      cells: Array(9).fill(null),
       curPlayer: player.x,
       winner: null,
       gameId: '123',

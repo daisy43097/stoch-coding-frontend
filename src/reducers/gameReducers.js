@@ -1,7 +1,7 @@
 import {actionType, player} from "../helper/const";
 
 const initState = {
-  board: Array(9).fill(null),
+  cells: Array(9).fill(null),
   curPlayer: player.x,
   winner: null,
   gameId: null,
