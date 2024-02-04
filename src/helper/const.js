@@ -12,3 +12,5 @@ export const actionType = {
   UPDATE_GAME_ID: 'UPDATE_GAME_ID',
   UPDATE_CUR_PLAYER: 'UPDATE_CUR_PLAYER',
 }
+
+export const BASE_URL = 'http://localhost:5003';
