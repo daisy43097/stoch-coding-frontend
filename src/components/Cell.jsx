@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Cell = () => {
+const Cell = ({value, makeMove, disabled}) => {
   return (
-    <div>
-      
-    </div>
+    <button onClick={makeMove} disabled={disabled}>
+      {value}
+    </button>
   );
 };
 

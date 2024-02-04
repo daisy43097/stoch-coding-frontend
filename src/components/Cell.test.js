@@ -1,10 +1,11 @@
 import {fireEvent, render, screen} from "@testing-library/react";
+import '@testing-library/jest-dom/extend-expect';
 import Cell from "./Cell";
 
 describe('Cell Component', () => {
   test('renders with the correct value', () => {
-    render(<Cell value='1' makeMove={() => {}} disabled={false} />);
-    expect(screen.getByRole('button')).toHaveTextContent('1');
+    render(<Cell value="X" makeMove={() => {}} disabled={false} />);
+    expect(screen.getByRole('button')).toHaveTextContent("X");
   });
 
   test('button is disabled when disabled prop is true', () => {
