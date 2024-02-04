@@ -9,6 +9,7 @@ const Board = () => {
   const winner = useSelector(state => state?.gameReducers?.winner);
   const gameId = useSelector(state => state?.gameReducers?.gameId);
   const curPlayer = useSelector(state => state?.gameReducers?.curPlayer);
+  const isTie = useSelector(state => state?.gameReducers?.isTie);
 
   const dispatch = useDispatch();
 
@@ -29,7 +30,7 @@ const Board = () => {
             key={index}
             value={cell}
             makeMove={() => makeMove(index)}
-            disabled={winner !== null}
+            disabled={winner !== null || isTie}
           />
         ))
       }
