@@ -6,6 +6,12 @@ import {gameReducers} from "../reducers/gameReducers";
 import {Provider} from "react-redux";
 import {player} from "../helper/const";
 
+// Mocking axios
+jest.mock('axios', () => ({
+  get: jest.fn(),
+  post: jest.fn(),
+}));
+
 function renderWithRedux(
   component,
   { initialState, store = createStore(gameReducers, initialState) } = {}

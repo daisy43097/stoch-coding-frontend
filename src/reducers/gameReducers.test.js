@@ -1,5 +1,11 @@
 import {gameReducers} from "./gameReducers";
-import {player} from "../helper/const";
+import {actionType, player} from "../helper/const";
+
+// Mocking axios
+jest.mock('axios', () => ({
+  get: jest.fn(),
+  post: jest.fn(),
+}));
 
 describe('userReducer', () => {
   it('should return the initial state', () => {
@@ -9,12 +15,13 @@ describe('userReducer', () => {
       winner: null,
       gameId: null,
       isTie: false,
+      errorMessage: null,
     });
   });
 
-  it('should handle START_NEW_GAME action', () => {
+  it('should handle UPDATE_GAME_ID action', () => {
     const newGameAction = {
-      type: 'START_NEW_GAME',
+      type: actionType.UPDATE_GAME_ID,
       payload: '123',
     };
     expect(gameReducers(undefined, newGameAction)).toEqual({
@@ -23,6 +30,7 @@ describe('userReducer', () => {
       winner: null,
       gameId: '123',
       isTie: false,
+      errorMessage: null,
     });
   });
 

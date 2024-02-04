@@ -20,8 +20,6 @@ const Board = () => {
     }));
   };
 
-  console.log('board cells-->>', cells);
-
   return (
     <div className={styles.board}>
       {

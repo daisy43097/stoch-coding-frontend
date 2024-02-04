@@ -6,7 +6,6 @@ const startNewGame = () => async dispatch => {
     const res = await axios.get(`${BASE_URL}/game/start`);
     const {data} = res;
     if (data.rs) {
-      console.log('new game action-->>', data.data.gameId)
       const {gameId} = data.data;
       dispatch({
         type: actionType.START_NEW_GAME,
